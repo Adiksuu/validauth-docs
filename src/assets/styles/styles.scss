@@ -306,12 +306,11 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
         margin: 24px 0;
         border-radius: 8px;
         overflow: hidden;
-        background: color.adjust(colors.$bg, $lightness: 3%);
-        border: 1px solid color.adjust(colors.$bg, $lightness: 8%);
+        background: transparent;
 
         code {
             display: block;
-            padding: 20px;
+            padding: 0 8px;
             overflow-x: auto;
             font-size: 14px;
             line-height: 1.6;
@@ -333,7 +332,7 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
 
     // Inline code
     code:not(pre code) {
-        background: color.adjust(colors.$bg, $lightness: 5%);
+        background: transparent;
         color: colors.$primary;
         padding: 3px 6px;
         border-radius: 4px;

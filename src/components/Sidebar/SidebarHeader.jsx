@@ -9,7 +9,7 @@ export default function SidebarHeader({ logo, version }) {
         {logo || 'validauth'}
       </div>
       {version && (
-        <button className="sidebar-version">
+        <button className="sidebar-version" onClick={() => window.open('https://github.com/Adiksuu/validauth/releases/latest', '_blank')}>
           {version}
         </button>
       )}
