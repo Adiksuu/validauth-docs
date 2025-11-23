@@ -39,10 +39,23 @@ export default function Sidebar({ isOpen, onClose }) {
                         label: "Password Strength",
                     },
                     {
+                        path: '/password-match',
+                        label: "Password Match Validation",
+                    },
+                    {
                         path: '/username',
                         label: "Username Validation",
                     }
                 ],
+            },
+            {
+                title: "UTILITIES",
+                items: [
+                    {
+                        path: '/password-generator',
+                        label: "Password Generator",
+                    },
+                ]
             },
             {
                 title: "FAQ",
