@@ -1,5 +1,11 @@
 const n=`# Changelog
 
+### [1.3.0] - 23.11.2025
+
+#### Added
+- Password generator util
+- Password match validator
+
 ### [1.2.1] - 23.11.2025
 
 #### Added

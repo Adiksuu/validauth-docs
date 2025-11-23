@@ -4,7 +4,6 @@ const n=`# 🚀 Quick Start
 
 - 📱 **Phone Number Validation** - International format support
 - 🔢 **PIN/OTP Validation** - Verification code validation
-- 🔄 **Password Match** - Compare password and confirm password
 - 🧹 **Sanitizers** - Clean and format input data
 - 🛡️ **Breach Detection** - Check against Have I Been Pwned database
 - 📝 **TypeScript Definitions** - Full TypeScript support
@@ -16,7 +15,7 @@ const n=`# 🚀 Quick Start
 
 validauth is actively developed and maintained. We're working on adding more validators and features based on community feedback.
 
-**Current version:** 1.2.1  
+**Current version:** 1.3.0 
 **Status:** ✅ Stable
 
 ### Roadmap
@@ -25,9 +24,10 @@ validauth is actively developed and maintained. We're working on adding more val
 - [x] Password validation
 - [x] Password strength calculator
 - [x] Username validation
+- [x] Password match validator
+- [x] Password generator
 - [ ] Phone number validation
 - [ ] PIN/OTP validation
-- [ ] Password match validator
 - [ ] Sanitizers and formatters
 - [ ] TypeScript definitions
 - [ ] React hooks
