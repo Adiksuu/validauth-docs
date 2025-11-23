@@ -1,39 +1,26 @@
 export default async function checkForUpdates() {
     try {
-        const response = await fetch(`https://allyai-backend.onrender.com/api/release/Adiksuu/validauth`);
-        const data = await response.json();
+        // Use GitHub API directly to get the latest release
+        const response = await fetch(`https://api.github.com/repos/Adiksuu/validauth/releases/latest`, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
 
-        if (data.success) {
-            return data.release.version
-        } else {
-            return 'Latest'
+        if (!response.ok) {
+            throw new Error(`GitHub API returned ${response.status}`);
         }
+
+        const data = await response.json();
+        
+        // Extract version from tag_name (e.g., "v1.2.1" or "1.2.1")
+        if (data.tag_name) {
+            return data.tag_name.startsWith('v') ? data.tag_name : `v${data.tag_name}`;
+        }
+        
+        return 'Latest';
     } catch (error) {
         console.error('Error checking for updates:', error);
-        // For testing purposes, you can uncomment the mock data below
-        /*
-        const mockData = {
-            success: true,
-            repository: "Adiksuu/AllyAI-mobile",
-            release: {
-                version: "v1.1.0",
-                name: "AllyAI v1.1.0",
-                description: "New features and improvements for better user experience.",
-                publishedAt: "2025-09-20T14:12:03Z",
-                downloadUrl: "https://github.com/Adiksuu/AllyAI-mobile/releases/tag/v1.1.0",
-                zipUrl: "https://api.github.com/repos/Adiksuu/AllyAI-mobile/zipball/v1.1.0",
-                tarUrl: "https://api.github.com/repos/Adiksuu/AllyAI-mobile/tarball/v1.1.0",
-                author: "Adiksuu",
-                isPrerelease: false,
-                isDraft: false,
-                isNewer: true,
-                currentVersion: "v1.0.0"
-            },
-            updateAvailable: true,
-            comparedVersion: "v1.0.0"
-        };
-        setUpdateData(mockData);
-        setShowUpdateModal(true);
-        */
+        return 'Latest';
     }
 };
