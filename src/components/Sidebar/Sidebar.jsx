@@ -45,6 +45,10 @@ export default function Sidebar({ isOpen, onClose }) {
                     {
                         path: '/username',
                         label: "Username Validation",
+                    },
+                    {
+                        path: '/otp',
+                        label: "OTP Validation",
                     }
                 ],
             },
@@ -55,6 +59,10 @@ export default function Sidebar({ isOpen, onClose }) {
                         path: '/password-generator',
                         label: "Password Generator",
                     },
+                    {
+                        path: '/otp-generator',
+                        label: "OTP Generator",
+                    }
                 ]
             },
             {

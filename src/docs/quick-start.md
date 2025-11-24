@@ -26,8 +26,9 @@ validauth is actively developed and maintained. We're working on adding more val
 - [x] Username validation
 - [x] Password match validator
 - [x] Password generator
+- [x] PIN/OTP validation
+- [x] OTP generator
 - [ ] Phone number validation
-- [ ] PIN/OTP validation
 - [ ] Sanitizers and formatters
 - [ ] TypeScript definitions
 - [ ] React hooks
