@@ -36,7 +36,7 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
     flex: 1;
     display: flex;
     // flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 // Scrollbar & Selection styles for webkit browsers (Chrome, Safari, Edge).
@@ -521,11 +521,11 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100%;
+    /* min-height: 100%; */
     padding: 48px 24px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
-    width: 100%;
+    /* width: 100%; */
     flex: 1;
 }
 
@@ -540,7 +540,7 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
     width: 100%;
 
     .home-hero-logo {
-        margin-bottom: 24px;
+        margin-bottom: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -566,7 +566,6 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
         font-size: 48px;
         font-weight: 700;
         color: colors.$white;
-        margin: 0 0 16px 0;
         letter-spacing: -1px;
     }
 
@@ -633,11 +632,9 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
 
 // Home Features styles
 .home-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 24px;
-    width: 100%;
-    max-width: 800px;
 }
 
 // Home Feature Card styles
@@ -648,6 +645,7 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
     padding: 24px;
     display: flex;
     flex-direction: column;
+    width: calc(50% - 12px);
     transition: all 0.2s ease;
 
     &:hover {
@@ -711,8 +709,8 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
     position: fixed;
     top: 16px;
     right: 16px;
-    width: 52px;
-    height: 52px;
+    width: 36px;
+    height: 36px;
     z-index: 1001;
     background: colors.$primary;
     color: colors.$white;
@@ -770,10 +768,11 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
         .home-hero-title {
             font-size: 40px;
         }
-    }
-
+    }        
     .home-features {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        .home-feature-card {
+            width: 100%;
+        }
     }
 }
 
@@ -801,7 +800,7 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
 
     // Show mobile menu toggle
     .mobile-menu-toggle {
-        display: block;
+        display: flex;
     }
 
     // Show mobile overlay
@@ -1020,7 +1019,6 @@ main > *:not(.sidebar):not(.mobile-menu-toggle):not(.mobile-overlay) {
     }
 
     .home-features {
-        grid-template-columns: 1fr;
         gap: 20px;
     }
 
