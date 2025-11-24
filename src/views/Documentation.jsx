@@ -4,6 +4,7 @@ import MarkdownRenderer from "../components/MarkdownRenderer/MarkdownRenderer";
 import RouteLoader from "../components/Loader/RouteLoader";
 import TableOfContents from "../components/TableOfContents/TableOfContents";
 import NextDocument from "../components/NextDocument/NextDocument";
+import checkForUpdates from "../functions/getVersion";
 
 // Import all markdown files using Vite's glob import
 const markdownModules = import.meta.glob("../docs/*.md", {
@@ -16,6 +17,16 @@ export default function Documentation() {
     const [content, setContent] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const [packageVersion, setPackageVersion] = useState('Latest');
+
+    useEffect(() => {
+        async function fetchVersion() {
+            const version = await checkForUpdates();
+            setPackageVersion(version);
+        }
+        fetchVersion();
+    }, [])
 
     useEffect(() => {
         const loadMarkdown = async () => {
@@ -36,7 +47,7 @@ export default function Documentation() {
 
                 // Load the markdown content
                 const text = await moduleLoader();
-                setContent(text);
+                setContent(text.replace('%version%', packageVersion));
             } catch (err) {
                 console.error("Error loading markdown:", err);
                 setError("Documentation not found");
@@ -49,7 +60,7 @@ export default function Documentation() {
         };
 
         loadMarkdown();
-    }, [docName]);
+    }, [docName, packageVersion]);
 
     if (loading) {
         return <RouteLoader />;

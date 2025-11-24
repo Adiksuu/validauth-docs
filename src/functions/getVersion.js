@@ -13,7 +13,6 @@ export default async function checkForUpdates() {
 
         const data = await response.json();
         
-        // Extract version from tag_name (e.g., "v1.2.1" or "1.2.1")
         if (data.tag_name) {
             return data.tag_name.startsWith('v') ? data.tag_name : `v${data.tag_name}`;
         }

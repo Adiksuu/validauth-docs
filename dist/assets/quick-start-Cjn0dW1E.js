@@ -15,7 +15,7 @@ const n=`# 🚀 Quick Start
 
 validauth is actively developed and maintained. We're working on adding more validators and features based on community feedback.
 
-**Current version:** 1.3.0 
+**Current version:** %version% 
 **Status:** ✅ Stable
 
 ### Roadmap
