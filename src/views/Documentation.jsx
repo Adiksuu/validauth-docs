@@ -5,6 +5,7 @@ import RouteLoader from "../components/Loader/RouteLoader";
 import TableOfContents from "../components/TableOfContents/TableOfContents";
 import NextDocument from "../components/NextDocument/NextDocument";
 import checkForUpdates from "../functions/getVersion";
+import NotFound from "./NotFound";
 
 // Import all markdown files using Vite's glob import
 const markdownModules = import.meta.glob("../docs/*.md", {
@@ -68,11 +69,7 @@ export default function Documentation() {
 
     if (error) {
         return (
-            <div className="documentation-wrapper">
-                <div className="documentation-container">
-                    <div className="documentation-error">{error}</div>
-                </div>
-            </div>
+            <NotFound />
         );
     }
 

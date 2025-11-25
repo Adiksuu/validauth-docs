@@ -15,6 +15,10 @@ export default function Home() {
             label: "NPM package",
             href: "https://www.npmjs.com/package/validauth",
         },
+        thirdAction: {
+            label: "Documentation",
+            href: "/docs/quick-start",
+        },
     };
 
     const features = [

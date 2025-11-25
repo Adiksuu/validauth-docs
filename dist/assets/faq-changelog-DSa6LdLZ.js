@@ -1,5 +1,18 @@
 const n=`# Changelog
 
+### [1.3.2] - 25.11.2025
+
+#### Added
+- Session Token Generator
+- Session Token Validator
+- XSS Protection Validator
+
+### [1.3.1] - 24.11.2025
+
+#### Added
+- OTP Validation
+- OTP Generator
+
 ### [1.3.0] - 23.11.2025
 
 #### Added

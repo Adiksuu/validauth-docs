@@ -49,6 +49,14 @@ export default function Sidebar({ isOpen, onClose }) {
                     {
                         path: '/otp',
                         label: "OTP Validation",
+                    },
+                    {
+                        path: '/session-token',
+                        label: "Session Token Validation",
+                    },
+                    {
+                        path: '/xss',
+                        label: "XSS Validation",
                     }
                 ],
             },
@@ -62,6 +70,10 @@ export default function Sidebar({ isOpen, onClose }) {
                     {
                         path: '/otp-generator',
                         label: "OTP Generator",
+                    },
+                    {
+                        path: '/session-token-generator',
+                        label: "Session Token Generator",
                     }
                 ]
             },

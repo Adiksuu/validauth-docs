@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import RouteLoader from "../components/Loader/RouteLoader.jsx";
 const Home = lazy(() => import("./Home.jsx"));
 const Documentation = lazy(() => import("./Documentation.jsx"));
+const NotFound = lazy(() => import("./NotFound.jsx"));
 
 export default function Router() {
     const routes = useMemo(
@@ -19,6 +20,10 @@ export default function Router() {
                 path: "/docs/:docName",
                 element: <Documentation />,
             },
+            {
+                path: "*",
+                element: <NotFound />
+            }
         ],
         []
     );

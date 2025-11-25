@@ -28,6 +28,9 @@ validauth is actively developed and maintained. We're working on adding more val
 - [x] Password generator
 - [x] PIN/OTP validation
 - [x] OTP generator
+- [x] Session token generator
+- [x] Session token validator
+- [x] XSS protection
 - [ ] Phone number validation
 - [ ] Sanitizers and formatters
 - [ ] TypeScript definitions
